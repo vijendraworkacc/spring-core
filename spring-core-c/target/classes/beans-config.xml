@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- bean definitions here -->
+
+	<!-- 1. Using tags -->
+	<!-- Dependency object must be created before Main object -->
+	<bean class="com.te.spring.core.dto.Dependency01"
+		name="dependencyBeanRef">
+		<property name="attribute01" value="attribute01 String value" />
+	</bean>
+
+	<!-- Reference injection -->
+	<bean class="com.te.spring.core.dto.Main" name="mainBean">
+		<property name="mainAttribute01"
+			value="mainAttribute01 String value" />
+		<property name="dependency01" ref="dependencyBeanRef" />
+	</bean>
+
+	<!-- 2. Using p schema -->
+	<bean class="com.te.spring.core.dto.Dependency01"
+		name="dependencyBeanRef02" p:attribute01="attribute01 String value 02" />
+
+	<bean class="com.te.spring.core.dto.Main" name="mainBean02"
+		p:mainAttribute01="mainAttribute01 String value 02"
+		p:dependency01-ref="dependencyBeanRef02" />
+</beans>

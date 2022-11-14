@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- bean definitions here -->
+	<bean class="com.te.spring.core.dto.Student" name="student01">
+		<property name="studentId">
+			<value>1</value>
+		</property>
+		<property name="studentName">
+			<value>A</value>
+		</property>
+		<property name="studentAddress">
+			<value>Address01</value>
+		</property>
+	</bean>
+
+	<bean class="com.te.spring.core.dto.Student" name="student02">
+		<property name="studentId" value="2" />
+		<property name="studentName" value="B" />
+		<property name="studentAddress" value="Address02" />
+	</bean>
+
+	<bean class="com.te.spring.core.dto.Student" name="student03"
+		p:studentId="3" p:studentName="C" p:studentAddress="Address03" />
+
+	<bean class="com.te.spring.core.dto.Student" name="student04">
+		<property name="studentId" value="4" />
+		<property name="studentName" value="D" />
+		<property name="studentAddress" value="Address04" />
+		<property name="studentCources">
+			<list>
+				<value>Mathematics</value>
+				<value>Biology</value>
+				<value>Physics</value>
+				<value>English</value>
+			</list>
+		</property>
+		<property name="studentTeachers">
+			<set>
+				<value>T01</value>
+				<value>T02</value>
+				<value>T03</value>
+				<value>T04</value>
+				<value>T02</value>
+			</set>
+		</property>
+		<property name="studentMarks">
+			<map>
+				<entry key="Mathematics" value="78" />
+				<entry key="Biology" value="67" />
+				<entry key="Physics" value="88" />
+				<entry key="English" value="45" />
+			</map>
+		</property>
+		<property name="studentProperties">
+			<props>
+				<prop key="FatherName">Father Name</prop>
+				<prop key="MotherName">Mother Name</prop>
+			</props>
+		</property>
+	</bean>
+</beans>

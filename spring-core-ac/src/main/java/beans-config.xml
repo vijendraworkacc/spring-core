@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- bean definitions here -->
+
+	<bean class="com.te.spring.core.beans.Bean" name="bean01">
+		<!-- Setter injection -->
+		<property name="a">
+			<value>1</value>
+		</property>
+		<property name="b" value="2" />
+		<property name="list">
+			<list>
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>4</value>
+			</list>
+		</property>
+
+		<property name="set">
+			<set>
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<value>3</value>
+				<value>3</value>
+				<value>4</value>
+			</set>
+		</property>
+
+		<property name="map">
+			<map>
+				<entry key="1" value="A" />
+				<entry key="2" value="B" />
+				<entry key="3" value="C" />
+				<entry key="4" value="D" />
+			</map>
+		</property>
+	</bean>
+</beans>
